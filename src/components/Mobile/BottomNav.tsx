@@ -10,12 +10,12 @@ export default function BottomNav({ activeView, onViewChange }: BottomNavProps) 
   const { t } = useTranslation();
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-surface border-t border-gray-700 z-20">
+    <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[375px] bg-gray-900/90 backdrop-blur-sm border-t border-gray-700 z-50">
       <div className="flex justify-around py-2">
         <button
           onClick={() => onViewChange('map')}
-          className={`touch-target flex flex-col items-center p-2 ${
-            activeView === 'map' ? 'text-primary' : 'text-text-secondary'
+          className={`touch-target flex flex-col items-center p-2 transition-colors ${
+            activeView === 'map' ? 'text-blue-400' : 'text-gray-400'
           }`}
         >
           <span className="text-2xl">🗺️</span>
@@ -24,8 +24,8 @@ export default function BottomNav({ activeView, onViewChange }: BottomNavProps) 
         
         <button
           onClick={() => onViewChange('shelters')}
-          className={`touch-target flex flex-col items-center p-2 ${
-            activeView === 'shelters' ? 'text-primary' : 'text-text-secondary'
+          className={`touch-target flex flex-col items-center p-2 transition-colors ${
+            activeView === 'shelters' ? 'text-blue-400' : 'text-gray-400'
           }`}
         >
           <span className="text-2xl">🏠</span>
@@ -34,8 +34,8 @@ export default function BottomNav({ activeView, onViewChange }: BottomNavProps) 
         
         <button
           onClick={() => onViewChange('alerts')}
-          className={`touch-target flex flex-col items-center p-2 ${
-            activeView === 'alerts' ? 'text-primary' : 'text-text-secondary'
+          className={`touch-target flex flex-col items-center p-2 transition-colors ${
+            activeView === 'alerts' ? 'text-blue-400' : 'text-gray-400'
           }`}
         >
           <span className="text-2xl">🚨</span>
@@ -44,8 +44,8 @@ export default function BottomNav({ activeView, onViewChange }: BottomNavProps) 
         
         <button
           onClick={() => onViewChange('resources')}
-          className={`touch-target flex flex-col items-center p-2 ${
-            activeView === 'resources' ? 'text-primary' : 'text-text-secondary'
+          className={`touch-target flex flex-col items-center p-2 transition-colors ${
+            activeView === 'resources' ? 'text-blue-400' : 'text-gray-400'
           }`}
         >
           <span className="text-2xl">🏥</span>

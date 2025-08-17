@@ -6,8 +6,9 @@ import MapView from './components/Map/MapView';
 import BottomNav from './components/Mobile/BottomNav';
 import QuickReport from './components/Reports/QuickReport';
 import BottomSheet from './components/Mobile/BottomSheet';
-import LanguageToggle from './components/Mobile/LanguageToggle';
+import TopBar from './components/Mobile/TopBar';
 import AlertBanner from './components/Alerts/AlertBanner';
+import ErrorBoundary from './components/common/ErrorBoundary';
 
 import { useGeolocation } from './hooks/useGeolocation';
 import { useRealtimeReports } from './hooks/useRealtimeReports';
@@ -55,35 +56,42 @@ function App() {
   }, []);
 
   return (
-    <div className={`h-screen w-screen relative overflow-hidden ${
-      batterySaverMode ? 'brightness-75' : ''
-    }`}>
-      <AlertBanner />
-      
-      <div className={activeAlert ? 'mt-16' : ''}>
-        <MapView
-          reports={reports}
-          userLocation={userLocation}
-          onBoundsChange={setMapBounds}
-          onReportSelect={setSelectedShelter}
-        />
+    <ErrorBoundary>
+      <div className="min-h-screen bg-gray-900 flex justify-center">
+        <div className={`h-screen w-full max-w-[375px] bg-gray-900 text-white overflow-hidden relative ${
+          batterySaverMode ? 'brightness-75' : ''
+        }`}>
+          <TopBar />
+          <AlertBanner />
+          
+          {/* Main Content */}
+          <div className={`h-full ${activeAlert ? 'pt-32' : 'pt-16'} pb-16`}>
+            <ErrorBoundary>
+              <MapView
+                reports={reports}
+                userLocation={userLocation}
+                onBoundsChange={setMapBounds}
+                onReportSelect={setSelectedShelter}
+              />
+            </ErrorBoundary>
+          </div>
+          
+          <QuickReport location={userLocation} />
+          
+          {selectedShelter && (
+            <BottomSheet
+              report={selectedShelter}
+              onClose={() => setSelectedShelter(null)}
+            />
+          )}
+          
+          <BottomNav
+            activeView="map"
+            onViewChange={() => {}}
+          />
+        </div>
       </div>
-      
-      <LanguageToggle />
-      <QuickReport location={userLocation} />
-      
-      {selectedShelter && (
-        <BottomSheet
-          report={selectedShelter}
-          onClose={() => setSelectedShelter(null)}
-        />
-      )}
-      
-      <BottomNav
-        activeView="map"
-        onViewChange={() => {}}
-      />
-    </div>
+    </ErrorBoundary>
   );
 }
 

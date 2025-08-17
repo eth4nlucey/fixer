@@ -18,16 +18,16 @@ export default function LanguageToggle() {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-30 bg-surface rounded-lg p-1 shadow-lg">
+    <div className="bg-gray-800/50 rounded-lg p-1 backdrop-blur-sm">
       <div className="flex space-x-1">
         {languages.map((lang) => (
           <button
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code as 'uk' | 'en' | 'ru')}
-            className={`touch-target px-2 py-1 text-sm font-medium rounded transition-colors ${
+            className={`px-2 py-1 text-sm font-medium rounded transition-colors ${
               language === lang.code
-                ? 'bg-primary text-white'
-                : 'text-text-secondary hover:text-text-primary hover:bg-surface'
+                ? 'bg-blue-600 text-white'
+                : 'text-gray-300 hover:text-white hover:bg-gray-700'
             }`}
             aria-label={`Switch to ${lang.name}`}
           >

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { supabase, getDeviceId } from '../../lib/supabase';
 import { useAppStore } from '../../store';
+import { ButtonSpinner } from '../common/LoadingSpinner';
 
 interface QuickReportProps {
   location: [number, number] | null;
@@ -60,40 +61,43 @@ export default function QuickReport({ location }: QuickReportProps) {
   };
 
   return (
-    <div className="fixed bottom-24 right-4 space-y-3 z-10">
-      {/* Shelter Open Report */}
+    <div className="fixed bottom-20 right-4 flex flex-col gap-3 z-40">
+      {/* Air Raid Alert */}
       <button
         onClick={() => submitReport('shelter_open')}
         disabled={isSubmitting}
-        className="touch-target w-14 h-14 bg-shelter rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform"
-        aria-label={t('reports.shelter_open')}
+        className="w-14 h-14 rounded-full bg-red-600 hover:bg-red-700 shadow-lg flex items-center justify-center active:scale-95 transition-all disabled:opacity-50"
+        aria-label={t('alerts.air_raid')}
+        title={t('alerts.air_raid')}
       >
-        <span className="text-2xl">🏠</span>
-      </button>
-      
-      {/* Resource Available */}
-      <button
-        onClick={() => submitReport('resource')}
-        disabled={isSubmitting}
-        className="touch-target w-14 h-14 bg-success rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform"
-        aria-label={t('reports.resource_available')}
-      >
-        <span className="text-2xl">✅</span>
+        {isSubmitting ? <ButtonSpinner /> : <span className="text-white text-2xl">⚠️</span>}
       </button>
       
       {/* All Clear */}
       <button
         onClick={() => submitReport('all_clear')}
         disabled={isSubmitting}
-        className="touch-target w-14 h-14 bg-secondary rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+        className="w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 shadow-lg flex items-center justify-center active:scale-95 transition-all disabled:opacity-50"
         aria-label={t('alerts.all_clear')}
+        title={t('alerts.all_clear')}
       >
-        <span className="text-2xl">☮️</span>
+        {isSubmitting ? <ButtonSpinner /> : <span className="text-white text-2xl">✅</span>}
+      </button>
+      
+      {/* Shelter Open */}
+      <button
+        onClick={() => submitReport('resource')}
+        disabled={isSubmitting}
+        className="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg flex items-center justify-center active:scale-95 transition-all disabled:opacity-50"
+        aria-label={t('reports.shelter_open')}
+        title={t('reports.shelter_open')}
+      >
+        {isSubmitting ? <ButtonSpinner /> : <span className="text-white text-2xl">🛡️</span>}
       </button>
 
       {/* Offline indicator */}
       {offlineMode && (
-        <div className="text-xs text-text-secondary text-center bg-surface rounded px-2 py-1">
+        <div className="text-xs text-yellow-400 text-center bg-black/50 rounded px-2 py-1 backdrop-blur-sm">
           {t('emergency.offline_mode')}
         </div>
       )}
