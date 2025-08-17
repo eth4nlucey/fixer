@@ -3,14 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --primary: #0057B7;
-  --secondary: #FFD700;
-  --danger: #DC2626;
-  --success: #16A34A;
+  /* Primary Ukrainian colors */
+  --primary: #0057B7;      /* Ukrainian blue */
+  --secondary: #FFD700;    /* Ukrainian yellow */
+  --danger: #DC2626;       /* Alert red */
+  --success: #16A34A;      /* Safe green */
+  --warning: #F59E0B;      /* Warning orange */
   --background: #0F172A;
   --surface: #1E293B;
   --text-primary: #F1F5F9;
   --text-secondary: #94A3B8;
+  
+  /* Emergency mode colors */
+  --emergency-bg: #000000;
+  --emergency-text: #FFFFFF;
+  --emergency-alert: #FF0000;
+  
+  /* Accessibility */
+  --focus-outline: 3px solid #FFD700;
+  --min-touch-target: 44px;
+  --emergency-touch-target: 60px;
+  
+  /* Performance optimizations */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --shadow-emergency: 0 0 20px rgba(255, 0, 0, 0.5);
 }
 
 body {
@@ -57,4 +74,58 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Emergency mode styles */
+.emergency-mode {
+  background: var(--emergency-bg);
+  color: var(--emergency-text);
+}
+
+.emergency-mode button {
+  min-height: var(--emergency-touch-target);
+  min-width: var(--emergency-touch-target);
+}
+
+/* Ukrainian flag gradient */
+.ukrainian-gradient {
+  background: linear-gradient(180deg, var(--primary) 50%, var(--secondary) 50%);
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+/* Alert animations */
+@keyframes alert-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.alert-pulse {
+  animation: alert-pulse 2s infinite;
+}
+
+@keyframes emergency-flash {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: var(--emergency-alert); }
+}
+
+.emergency-flash {
+  animation: emergency-flash 1s infinite;
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Map performance optimizations */
+.map-container {
+  contain: layout style paint;
+  will-change: transform;
 }

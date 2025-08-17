@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { supabase, getDeviceId } from '../../lib/supabase';
 import { useAppStore } from '../../store';
 import { ButtonSpinner } from '../common/LoadingSpinner';
+import { validateReportSubmission, generateDeviceFingerprint } from '../../lib/validation';
 
 interface QuickReportProps {
   location: [number, number] | null;
@@ -32,6 +33,17 @@ export default function QuickReport({ location, selectedLocation, onLocationClea
     };
     
     const dbType = typeMapping[type];
+    
+    // Generate device fingerprint for validation
+    const deviceFingerprint = generateDeviceFingerprint();
+    
+    // Validate report submission
+    const validation = validateReportSubmission(location, dbType, deviceFingerprint);
+    if (!validation.valid) {
+      alert(t('common.error') + ': ' + validation.error);
+      setIsSubmitting(false);
+      return;
+    }
     
     if (offlineMode) {
       // Queue for offline sync
