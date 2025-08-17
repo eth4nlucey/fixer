@@ -1,0 +1,64 @@
+{
+  "app": {
+    "name": "ФІКСЕР",
+    "title": "Карта безпеки"
+  },
+  "navigation": {
+    "map": "Карта",
+    "shelters": "Укриття",
+    "alerts": "Сигнали",
+    "resources": "Ресурси"
+  },
+  "shelters": {
+    "bomb_shelter": "Бомбосховище",
+    "metro": "Метро",
+    "basement": "Підвал",
+    "parking": "Паркінг",
+    "capacity": "Місткість",
+    "accessibility": "Доступність",
+    "amenities": "Зручності",
+    "status": {
+      "open": "Відкрито",
+      "closed": "Зачинено",
+      "unknown": "Невідомо"
+    },
+    "find_nearest": "Найближче укриття",
+    "route_to": "Маршрут до укриття"
+  },
+  "alerts": {
+    "air_raid": "Повітряна тривога",
+    "all_clear": "Відбій тривоги",
+    "active": "Активна тривога",
+    "history": "Історія сигналів"
+  },
+  "resources": {
+    "hospital": "Лікарня",
+    "pharmacy": "Аптека",
+    "power": "Зарядка",
+    "water": "Вода",
+    "humanitarian_aid": "Гуманітарна допомога",
+    "24h": "24 години"
+  },
+  "reports": {
+    "quick_report": "Швидкий звіт",
+    "shelter_open": "Укриття відкрите",
+    "resource_available": "Ресурс доступний",
+    "verify": "Підтвердити",
+    "verified": "Підтверджено"
+  },
+  "emergency": {
+    "emergency_contacts": "Екстрені контакти",
+    "first_aid": "Перша допомога",
+    "battery_saver": "Економія батареї",
+    "offline_mode": "Офлайн режим"
+  },
+  "common": {
+    "loading": "Завантаження...",
+    "error": "Помилка",
+    "retry": "Спробувати знову",
+    "cancel": "Скасувати",
+    "confirm": "Підтвердити",
+    "close": "Закрити",
+    "details": "Деталі"
+  }
+}

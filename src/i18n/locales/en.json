@@ -1,0 +1,64 @@
+{
+  "app": {
+    "name": "FIXER",
+    "title": "Safety Map"
+  },
+  "navigation": {
+    "map": "Map",
+    "shelters": "Shelters",
+    "alerts": "Alerts",
+    "resources": "Resources"
+  },
+  "shelters": {
+    "bomb_shelter": "Bomb Shelter",
+    "metro": "Metro",
+    "basement": "Basement",
+    "parking": "Parking",
+    "capacity": "Capacity",
+    "accessibility": "Accessibility",
+    "amenities": "Amenities",
+    "status": {
+      "open": "Open",
+      "closed": "Closed",
+      "unknown": "Unknown"
+    },
+    "find_nearest": "Nearest Shelter",
+    "route_to": "Route to Shelter"
+  },
+  "alerts": {
+    "air_raid": "Air Raid Alert",
+    "all_clear": "All Clear",
+    "active": "Active Alert",
+    "history": "Alert History"
+  },
+  "resources": {
+    "hospital": "Hospital",
+    "pharmacy": "Pharmacy",
+    "power": "Charging",
+    "water": "Water",
+    "humanitarian_aid": "Humanitarian Aid",
+    "24h": "24 hours"
+  },
+  "reports": {
+    "quick_report": "Quick Report",
+    "shelter_open": "Shelter Open",
+    "resource_available": "Resource Available",
+    "verify": "Verify",
+    "verified": "Verified"
+  },
+  "emergency": {
+    "emergency_contacts": "Emergency Contacts",
+    "first_aid": "First Aid",
+    "battery_saver": "Battery Saver",
+    "offline_mode": "Offline Mode"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "details": "Details"
+  }
+}

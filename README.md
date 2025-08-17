@@ -1,46 +1,171 @@
-# Getting Started with Create React App
+# ФІКСЕР / FIXER - Safety Map for Ukraine
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A mobile-first Progressive Web App (PWA) specifically designed for Ukrainian civilians, international journalists, and volunteers. Provides critical safety information including bomb shelters, air raid alerts, and essential resources, with trilingual support (Ukrainian, English, Russian).
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **🏠 Bomb Shelter Locator** - Find nearest shelters with capacity and amenities
+- **🚨 Air Raid Alert System** - Real-time alerts with visual and audio warnings
+- **🌍 Trilingual Support** - Ukrainian (default), English, and Russian
+- **📱 Mobile-First Design** - Optimized for 375px-428px viewports
+- **⚡ Emergency Features** - Battery saver mode, large touch targets, high contrast
+- **📍 Quick Reporting** - One-tap shelter status and resource availability updates
+- **🔄 Offline-First** - Works without internet connection
+- **🎨 Ukrainian Design** - Ukrainian blue/yellow color scheme with cultural sensitivity
 
-### `npm start`
+## 🛠 Tech Stack
 
-Runs the app in the development mode.\
+- **Frontend**: React, TypeScript, Mapbox GL JS, Tailwind CSS, PWA
+- **Internationalization**: i18next with browser language detection
+- **State Management**: Zustand with persistence
+- **Backend**: Supabase (PostgreSQL with PostGIS, Realtime, Auth, Storage)
+- **Hosting**: Vercel
+- **Mobile-first**: 375px-428px viewport (iPhone SE to iPhone Pro Max)
+
+## 📱 Setup Instructions
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Environment Variables
+
+The Supabase backend is already configured. You only need to add your Mapbox token:
+
+```env
+REACT_APP_SUPABASE_URL=https://hhdhjrkojgqziqmygqct.supabase.co
+REACT_APP_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhoZGhqcmtvamdxemlxbXlncWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU0MzEzNzMsImV4cCI6MjA3MTAwNzM3M30.CBtzhNxcuej71Mt4HuaDWOlZS_ivEUfnZcUV08LwoCQ
+REACT_APP_MAPBOX_TOKEN=your_mapbox_public_token
+```
+
+### 3. Key Features Implementation
+
+The app includes these Ukrainian-specific features:
+
+- **🇺🇦 Language Detection**: Auto-detects Ukrainian, falls back to English/Russian
+- **🎨 Ukrainian Colors**: #0057B7 (blue) and #FFD700 (yellow) design theme
+- **📱 Emergency UX**: 44px minimum touch targets, battery saver mode
+- **🏠 Shelter Priority**: Bomb shelters are the #1 priority feature
+- **🚨 Alert System**: Air raid alerts with visual/audio notifications
+- **📍 Quick Actions**: One-tap reporting for shelter status and resources
+
+### 4. Mapbox Setup
+
+1. Create account at [mapbox.com](https://mapbox.com)
+2. Get public access token
+3. Add to `.env.local`
+
+### 5. Run Development Server
+
+```bash
+npm start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 6. Build for Production
 
-### `npm test`
+```bash
+npm run build
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Deployment
 
-### `npm run build`
+### Vercel Deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Push code to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Import Git repository
+4. Add environment variables:
+   - `REACT_APP_SUPABASE_URL`
+   - `REACT_APP_SUPABASE_ANON_KEY`
+   - `REACT_APP_MAPBOX_TOKEN`
+5. Deploy
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📱 Testing the App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Open on mobile device or Chrome DevTools mobile view
+2. Allow location permissions
+3. Test quick report buttons
+4. Check real-time updates (open in two tabs)
+5. Test offline mode (Chrome DevTools > Network > Offline)
+6. Install as PWA (Chrome menu > Install app)
 
-### `npm run eject`
+## 🔮 Next Features to Build
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+After MVP is working, add:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Report verification system
+2. Find nearest hospital/shelter
+3. Photo upload for reports
+4. Journalist check-in system
+5. Push notifications for nearby dangers
+6. Offline map tile caching
+7. Voice input for reports
+8. Report expiry system
+9. Multi-language support
+10. Share location via WhatsApp
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🐛 Common Issues & Solutions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Issue: Location not working
+**Solution**: Ensure HTTPS in production, check browser permissions
 
-## Learn More
+### Issue: Real-time not updating
+**Solution**: Check Supabase Realtime is enabled for tables
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Issue: Map not loading
+**Solution**: Verify Mapbox token is correct
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Issue: PWA not installing
+**Solution**: Must be served over HTTPS, check manifest.json
+
+## 🔒 Security Features
+
+- Anonymous reporting by default
+- Device ID for verification without accounts
+- No personal data required
+- HTTPS only in production
+- Row Level Security on all tables
+- Rate limiting on API calls
+
+## 📂 Project Structure
+
+```
+src/
+├── components/
+│   ├── Map/
+│   │   └── MapView.tsx
+│   ├── Reports/
+│   │   └── QuickReport.tsx
+│   ├── Mobile/
+│   │   ├── BottomSheet.tsx
+│   │   └── BottomNav.tsx
+│   └── Resources/
+│       └── NearestResource.tsx
+├── hooks/
+│   ├── useRealtimeReports.ts
+│   ├── useGeolocation.ts
+│   └── useOfflineSync.ts
+├── lib/
+│   ├── supabase.ts
+│   └── database.types.ts
+├── utils/
+│   └── mapHelpers.ts
+└── App.tsx
+```
+
+## 🤝 Contributing
+
+This app helps save lives by crowd-sourcing safety information in conflict zones. Build with care and consideration for the users who will depend on it.
+
+- MIT License
+- Accept PRs for translations
+- Partner with humanitarian organizations
+- Maintain free tier for conflict zones
+
+---
+
+**⚠️ Important**: This application is designed for humanitarian purposes to help save lives in conflict zones. Please use responsibly and consider the safety of all users.

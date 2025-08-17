@@ -1,0 +1,64 @@
+{
+  "app": {
+    "name": "ФИКСЕР",
+    "title": "Карта безопасности"
+  },
+  "navigation": {
+    "map": "Карта",
+    "shelters": "Укрытия",
+    "alerts": "Сигналы",
+    "resources": "Ресурсы"
+  },
+  "shelters": {
+    "bomb_shelter": "Бомбоубежище",
+    "metro": "Метро",
+    "basement": "Подвал",
+    "parking": "Паркинг",
+    "capacity": "Вместимость",
+    "accessibility": "Доступность",
+    "amenities": "Удобства",
+    "status": {
+      "open": "Открыто",
+      "closed": "Закрыто",
+      "unknown": "Неизвестно"
+    },
+    "find_nearest": "Ближайшее укрытие",
+    "route_to": "Маршрут к укрытию"
+  },
+  "alerts": {
+    "air_raid": "Воздушная тревога",
+    "all_clear": "Отбой тревоги",
+    "active": "Активная тревога",
+    "history": "История сигналов"
+  },
+  "resources": {
+    "hospital": "Больница",
+    "pharmacy": "Аптека",
+    "power": "Зарядка",
+    "water": "Вода",
+    "humanitarian_aid": "Гуманитарная помощь",
+    "24h": "24 часа"
+  },
+  "reports": {
+    "quick_report": "Быстрый отчёт",
+    "shelter_open": "Укрытие открыто",
+    "resource_available": "Ресурс доступен",
+    "verify": "Подтвердить",
+    "verified": "Подтверждено"
+  },
+  "emergency": {
+    "emergency_contacts": "Экстренные контакты",
+    "first_aid": "Первая помощь",
+    "battery_saver": "Экономия батареи",
+    "offline_mode": "Офлайн режим"
+  },
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "retry": "Попробовать снова",
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "close": "Закрыть",
+    "details": "Детали"
+  }
+}
