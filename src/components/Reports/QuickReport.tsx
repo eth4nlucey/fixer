@@ -6,9 +6,12 @@ import { ButtonSpinner } from '../common/LoadingSpinner';
 
 interface QuickReportProps {
   location: [number, number] | null;
+  selectedLocation: [number, number] | null;
+  onLocationClear: () => void;
+  onReportSubmitted: (location: [number, number], type: 'danger' | 'safe' | 'resource') => void;
 }
 
-export default function QuickReport({ location }: QuickReportProps) {
+export default function QuickReport({ location, selectedLocation, onLocationClear, onReportSubmitted }: QuickReportProps) {
   const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { offlineMode } = useAppStore();
@@ -21,10 +24,19 @@ export default function QuickReport({ location }: QuickReportProps) {
 
     setIsSubmitting(true);
     
+    // Map the button types to database schema types
+    const typeMapping = {
+      'shelter_open': 'danger' as const,
+      'all_clear': 'safe' as const,
+      'resource': 'resource' as const,
+    };
+    
+    const dbType = typeMapping[type];
+    
     if (offlineMode) {
       // Queue for offline sync
       const report = {
-        type,
+        type: dbType,
         location: `POINT(${location[1]} ${location[0]})`,
         timestamp: new Date().toISOString(),
         anonymous: true,
@@ -38,35 +50,53 @@ export default function QuickReport({ location }: QuickReportProps) {
       
       setIsSubmitting(false);
       navigator.vibrate?.(200);
+      // Transform the marker and clear selection for offline mode too
+      onReportSubmitted(location, dbType);
       return;
     }
 
     try {
       const { error } = await supabase.from('reports').insert({
-        type,
+        type: dbType,
         location: `POINT(${location[1]} ${location[0]})`,
         anonymous: true,
       });
 
       if (!error) {
         navigator.vibrate?.(200);
+        console.log('Report submitted successfully:', type);
+        // Transform the marker and clear selection
+        onReportSubmitted(location, dbType);
       } else {
-        alert(t('common.error'));
+        console.error('Supabase error:', error);
+        alert(t('common.error') + ': ' + error.message);
       }
     } catch (error) {
-      alert(t('common.error'));
+      console.error('Report submission error:', error);
+      alert(t('common.error') + ': ' + (error instanceof Error ? error.message : 'Unknown error'));
     }
 
     setIsSubmitting(false);
   };
 
+  const isLocationSelected = selectedLocation !== null;
+  const glowClass = isLocationSelected 
+    ? "ring-4 ring-blue-400 ring-opacity-75 animate-pulse shadow-2xl shadow-blue-500/50" 
+    : "";
+
   return (
     <div className="fixed bottom-20 right-4 flex flex-col gap-3 z-40">
+      {isLocationSelected && (
+        <div className="bg-blue-600 text-white text-xs px-3 py-2 rounded-lg shadow-lg animate-fade-in">
+          📍 {t('reports.location_selected')}
+        </div>
+      )}
+      
       {/* Air Raid Alert */}
       <button
         onClick={() => submitReport('shelter_open')}
-        disabled={isSubmitting}
-        className="w-14 h-14 rounded-full bg-red-600 hover:bg-red-700 shadow-lg flex items-center justify-center active:scale-95 transition-all disabled:opacity-50"
+        disabled={isSubmitting || !isLocationSelected}
+        className={`w-14 h-14 rounded-full bg-red-600 hover:bg-red-700 shadow-lg flex items-center justify-center active:scale-95 transition-all disabled:opacity-50 ${glowClass}`}
         aria-label={t('alerts.air_raid')}
         title={t('alerts.air_raid')}
       >
@@ -76,8 +106,8 @@ export default function QuickReport({ location }: QuickReportProps) {
       {/* All Clear */}
       <button
         onClick={() => submitReport('all_clear')}
-        disabled={isSubmitting}
-        className="w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 shadow-lg flex items-center justify-center active:scale-95 transition-all disabled:opacity-50"
+        disabled={isSubmitting || !isLocationSelected}
+        className={`w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 shadow-lg flex items-center justify-center active:scale-95 transition-all disabled:opacity-50 ${glowClass}`}
         aria-label={t('alerts.all_clear')}
         title={t('alerts.all_clear')}
       >
@@ -87,8 +117,8 @@ export default function QuickReport({ location }: QuickReportProps) {
       {/* Shelter Open */}
       <button
         onClick={() => submitReport('resource')}
-        disabled={isSubmitting}
-        className="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg flex items-center justify-center active:scale-95 transition-all disabled:opacity-50"
+        disabled={isSubmitting || !isLocationSelected}
+        className={`w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg flex items-center justify-center active:scale-95 transition-all disabled:opacity-50 ${glowClass}`}
         aria-label={t('reports.shelter_open')}
         title={t('reports.shelter_open')}
       >

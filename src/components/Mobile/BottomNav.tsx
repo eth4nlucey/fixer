@@ -14,42 +14,52 @@ export default function BottomNav({ activeView, onViewChange }: BottomNavProps) 
       <div className="flex justify-around py-2">
         <button
           onClick={() => onViewChange('map')}
-          className={`touch-target flex flex-col items-center p-2 transition-colors ${
+          className={`flex flex-col items-center p-1 transition-colors ${
             activeView === 'map' ? 'text-blue-400' : 'text-gray-400'
           }`}
         >
-          <span className="text-2xl">🗺️</span>
+          <span className="text-lg">🗺️</span>
           <span className="text-xs mt-1">{t('navigation.map')}</span>
         </button>
         
         <button
           onClick={() => onViewChange('shelters')}
-          className={`touch-target flex flex-col items-center p-2 transition-colors ${
+          className={`flex flex-col items-center p-1 transition-colors ${
             activeView === 'shelters' ? 'text-blue-400' : 'text-gray-400'
           }`}
         >
-          <span className="text-2xl">🏠</span>
+          <span className="text-lg">🏠</span>
           <span className="text-xs mt-1">{t('navigation.shelters')}</span>
         </button>
         
         <button
           onClick={() => onViewChange('alerts')}
-          className={`touch-target flex flex-col items-center p-2 transition-colors ${
+          className={`flex flex-col items-center p-1 transition-colors ${
             activeView === 'alerts' ? 'text-blue-400' : 'text-gray-400'
           }`}
         >
-          <span className="text-2xl">🚨</span>
+          <span className="text-lg">🚨</span>
           <span className="text-xs mt-1">{t('navigation.alerts')}</span>
         </button>
         
         <button
           onClick={() => onViewChange('resources')}
-          className={`touch-target flex flex-col items-center p-2 transition-colors ${
+          className={`flex flex-col items-center p-1 transition-colors ${
             activeView === 'resources' ? 'text-blue-400' : 'text-gray-400'
           }`}
         >
-          <span className="text-2xl">🏥</span>
+          <span className="text-lg">🏥</span>
           <span className="text-xs mt-1">{t('navigation.resources')}</span>
+        </button>
+
+        <button
+          onClick={() => onViewChange('reports')}
+          className={`flex flex-col items-center p-1 transition-colors ${
+            activeView === 'reports' ? 'text-blue-400' : 'text-gray-400'
+          }`}
+        >
+          <span className="text-lg">📋</span>
+          <span className="text-xs mt-1">{t('navigation.reports')}</span>
         </button>
       </div>
     </div>

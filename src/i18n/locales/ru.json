@@ -7,13 +7,14 @@
     "map": "Карта",
     "shelters": "Укрытия",
     "alerts": "Сигналы",
-    "resources": "Ресурсы"
+    "resources": "Ресурсы",
+    "reports": "Отчеты"
   },
   "shelters": {
     "bomb_shelter": "Бомбоубежище",
     "metro": "Метро",
     "basement": "Подвал",
-    "parking": "Паркинг",
+    "parking": "Парковка",
     "capacity": "Вместимость",
     "accessibility": "Доступность",
     "amenities": "Удобства",
@@ -23,13 +24,37 @@
       "unknown": "Неизвестно"
     },
     "find_nearest": "Ближайшее укрытие",
-    "route_to": "Маршрут к укрытию"
+    "route_to": "Маршрут к укрытию",
+    "locations": {
+      "maidan_metro": "Метро Майдан Независимости",
+      "school_7_basement": "Школа №7 подвал",
+      "globus_parking": "ТРЦ Глобус подземная парковка"
+    },
+    "title": "Бомбоубежища",
+    "description": "Ближайшие бомбоубежища и безопасные места",
+    "nearest_shelters": "Ближайшие бомбоубежища и безопасные места"
   },
   "alerts": {
     "air_raid": "Воздушная тревога",
     "all_clear": "Отбой тревоги",
     "active": "Активная тревога",
-    "history": "История сигналов"
+    "history": "История сигналов",
+    "title": "Сигналы тревоги",
+    "description": "Воздушные тревоги и уведомления безопасности",
+    "active_alert": "АКТИВНАЯ ТРЕВОГА",
+    "just_now": "Только что",
+    "minutes_ago": "мин назад",
+    "hours_ago": "ч назад",
+    "messages": {
+      "air_raid_kyiv": "Воздушная тревога в Киевской области. Немедленно пройдите в укрытие.",
+      "all_clear_lviv": "Отбой тревоги во Львовской области.",
+      "air_raid_kharkiv_ended": "Отбой воздушной тревоги в Харьковской области."
+    },
+    "regions": {
+      "kyiv": "Киев",
+      "lviv": "Львов",
+      "kharkiv": "Харьков"
+    }
   },
   "resources": {
     "hospital": "Больница",
@@ -37,20 +62,60 @@
     "power": "Зарядка",
     "water": "Вода",
     "humanitarian_aid": "Гуманитарная помощь",
-    "24h": "24 часа"
+    "24h": "24 часа",
+    "title": "Основные ресурсы",
+    "description": "Основные услуги и ресурсы поблизости",
+    "hours": "Часы",
+    "phone": "Телефон",
+    "services": "Услуги",
+    "get_directions": "Получить маршрут",
+    "call": "Позвонить",
+    "locations": {
+      "kyiv_hospital_5": "Киевская городская больница №5",
+      "apteka_24": "Аптека 24/7",
+      "metro_charging": "Станция зарядки - Метро",
+      "water_distribution": "Пункт раздачи воды",
+      "red_cross_center": "Центр распределения Красного Креста"
+    }
   },
   "reports": {
-    "quick_report": "Быстрый отчёт",
+    "quick_report": "Быстрый отчет",
     "shelter_open": "Укрытие открыто",
     "resource_available": "Ресурс доступен",
     "verify": "Подтвердить",
-    "verified": "Подтверждено"
+    "verified": "Подтверждено",
+    "title": "Последние отчеты",
+    "description": "Проверенные сообществом отчеты безопасности",
+    "view_on_map": "Посмотреть на карте",
+    "report_issue": "Сообщить о проблеме",
+    "confirmations": "подтверждений",
+    "location_selected": "Место Выбрано",
+    "danger": "Опасность",
+    "safe": "Безопасно",
+    "checkpoint": "Блокпост",
+    "help_community": "Помогите своему сообществу оставаться в безопасности, сообщая о текущих условиях",
+    "locations": {
+      "shevchenkivskyi": "Шевченковский район",
+      "podilskyi": "Подольский район",
+      "pechersk": "Печерский район",
+      "obolon": "Оболонский район"
+    },
+    "messages": {
+      "gunfire_maidan": "Сообщение об интенсивной стрельбе возле Майдана Независимости",
+      "area_cleared": "Территория очищена миротворцами",
+      "checkpoint_active": "Военный блокпост активен",
+      "shelter_safe": "Укрытие подтверждено как безопасное"
+    }
   },
   "emergency": {
     "emergency_contacts": "Экстренные контакты",
     "first_aid": "Первая помощь",
     "battery_saver": "Экономия батареи",
-    "offline_mode": "Офлайн режим"
+    "offline_mode": "Оффлайн режим",
+    "emergency_services": "Службы экстренного реагирования",
+    "police": "Полиция",
+    "fire_department": "Пожарная служба",
+    "medical_emergency": "Скорая помощь"
   },
   "common": {
     "loading": "Загрузка...",
@@ -59,6 +124,33 @@
     "cancel": "Отмена",
     "confirm": "Подтвердить",
     "close": "Закрыть",
-    "details": "Детали"
+    "details": "Детали",
+    "distance": "Расстояние",
+    "status": "Статус",
+    "active": "АКТИВНЫЙ"
+  },
+  "map": {
+    "kyiv": "Киев",
+    "kyiv_map": "Карта Киева",
+    "real_time_updates": "Обновления в реальном времени",
+    "zoom_hint": "Разведите пальцы для увеличения",
+    "legend": {
+      "danger": "Опасность",
+      "safe": "Безопасно",
+      "checkpoint": "Блокпост",
+      "shelter": "Укрытие"
+    },
+    "controls": {
+      "reset_bearing": "Повернуть карту на север",
+      "zoom_in": "Увеличить",
+      "zoom_out": "Уменьшить"
+    },
+    "errors": {
+      "not_available": "Карта недоступна",
+      "token_missing": "Отсутствует токен Mapbox. Добавьте REACT_APP_MAPBOX_TOKEN в файл .env.local.",
+      "get_token": "Получите бесплатный токен на mapbox.com",
+      "map_error": "Ошибка карты",
+      "reload_page": "Перезагрузить страницу"
+    }
   }
 }

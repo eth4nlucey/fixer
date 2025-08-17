@@ -5,6 +5,12 @@ import './i18n';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Enable React DevTools in production
+if (typeof window !== 'undefined') {
+  (window as any).__REACT_DEVTOOLS_GLOBAL_HOOK__ = (window as any).__REACT_DEVTOOLS_GLOBAL_HOOK__ || {};
+  (window as any).__REACT_DEVTOOLS_GLOBAL_HOOK__.supportsFiber = true;
+}
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

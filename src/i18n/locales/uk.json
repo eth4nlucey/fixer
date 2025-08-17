@@ -7,7 +7,8 @@
     "map": "Карта",
     "shelters": "Укриття",
     "alerts": "Сигнали",
-    "resources": "Ресурси"
+    "resources": "Ресурси",
+    "reports": "Звіти"
   },
   "shelters": {
     "bomb_shelter": "Бомбосховище",
@@ -23,13 +24,37 @@
       "unknown": "Невідомо"
     },
     "find_nearest": "Найближче укриття",
-    "route_to": "Маршрут до укриття"
+    "route_to": "Маршрут до укриття",
+    "title": "Бомбосховища",
+    "description": "Найближчі бомбосховища та безпечні місця",
+    "nearest_shelters": "Найближчі бомбосховища та безпечні місця",
+    "locations": {
+      "maidan_metro": "Метро Майдан Незалежності",
+      "school_7_basement": "Школа №7 підвал",
+      "globus_parking": "ТРЦ Глобус підземний паркінг"
+    }
   },
   "alerts": {
     "air_raid": "Повітряна тривога",
     "all_clear": "Відбій тривоги",
     "active": "Активна тривога",
-    "history": "Історія сигналів"
+    "history": "Історія сигналів",
+    "title": "Сигнали тривоги",
+    "description": "Повітряні тривоги та сповіщення безпеки",
+    "active_alert": "АКТИВНА ТРИВОГА",
+    "just_now": "Щойно",
+    "minutes_ago": "хв тому",
+    "hours_ago": "год тому",
+    "messages": {
+      "air_raid_kyiv": "Повітряна тривога в Київській області. Негайно зайдіть в укриття.",
+      "all_clear_lviv": "Відбій тривоги у Львівській області.",
+      "air_raid_kharkiv_ended": "Відбій повітряної тривоги у Харківській області."
+    },
+    "regions": {
+      "kyiv": "Київ",
+      "lviv": "Львів",
+      "kharkiv": "Харків"
+    }
   },
   "resources": {
     "hospital": "Лікарня",
@@ -37,20 +62,60 @@
     "power": "Зарядка",
     "water": "Вода",
     "humanitarian_aid": "Гуманітарна допомога",
-    "24h": "24 години"
+    "24h": "24 години",
+    "title": "Основні ресурси",
+    "description": "Основні служби та ресурси поблизу",
+    "hours": "Години",
+    "phone": "Телефон",
+    "services": "Послуги",
+    "get_directions": "Отримати маршрут",
+    "call": "Зателефонувати",
+    "locations": {
+      "kyiv_hospital_5": "Київська міська лікарня №5",
+      "apteka_24": "Аптека 24/7",
+      "metro_charging": "Станція зарядки - Метро",
+      "water_distribution": "Пункт роздачі води",
+      "red_cross_center": "Центр розподілу Червоного Хреста"
+    }
   },
   "reports": {
     "quick_report": "Швидкий звіт",
     "shelter_open": "Укриття відкрите",
     "resource_available": "Ресурс доступний",
     "verify": "Підтвердити",
-    "verified": "Підтверджено"
+    "verified": "Підтверджено",
+    "title": "Останні звіти",
+    "description": "Перевірені громадою звіти безпеки",
+    "view_on_map": "Переглянути на карті",
+    "report_issue": "Повідомити про проблему",
+    "confirmations": "підтверджень",
+    "location_selected": "Місце Обрано",
+    "danger": "Небезпека",
+    "safe": "Безпечно",
+    "checkpoint": "Блокпост",
+    "help_community": "Допоможіть своїй громаді залишатися в безпеці, повідомляючи про поточні умови",
+    "locations": {
+      "shevchenkivskyi": "Шевченківський район",
+      "podilskyi": "Подільський район",
+      "pechersk": "Печерський район",
+      "obolon": "Оболонський район"
+    },
+    "messages": {
+      "gunfire_maidan": "Повідомлення про інтенсивну стрілянину поблизу Майдану Незалежності",
+      "area_cleared": "Територія очищена миротворцями",
+      "checkpoint_active": "Військовий блокпост активний",
+      "shelter_safe": "Укриття підтверджено як безпечне"
+    }
   },
   "emergency": {
     "emergency_contacts": "Екстрені контакти",
     "first_aid": "Перша допомога",
     "battery_saver": "Економія батареї",
-    "offline_mode": "Офлайн режим"
+    "offline_mode": "Офлайн режим",
+    "emergency_services": "Служби екстреного реагування",
+    "police": "Поліція",
+    "fire_department": "Пожежна служба",
+    "medical_emergency": "Швидка допомога"
   },
   "common": {
     "loading": "Завантаження...",
@@ -59,6 +124,33 @@
     "cancel": "Скасувати",
     "confirm": "Підтвердити",
     "close": "Закрити",
-    "details": "Деталі"
+    "details": "Деталі",
+    "distance": "Відстань",
+    "status": "Статус",
+    "active": "АКТИВНИЙ"
+  },
+  "map": {
+    "kyiv": "Київ",
+    "kyiv_map": "Карта Києва",
+    "real_time_updates": "Оновлення в реальному часі",
+    "zoom_hint": "Розведіть пальці для збільшення",
+    "legend": {
+      "danger": "Небезпека",
+      "safe": "Безпечно",
+      "checkpoint": "Блокпост",
+      "shelter": "Укриття"
+    },
+    "controls": {
+      "reset_bearing": "Повернути карту на північ",
+      "zoom_in": "Збільшити",
+      "zoom_out": "Зменшити"
+    },
+    "errors": {
+      "not_available": "Карта недоступна",
+      "token_missing": "Відсутній токен Mapbox. Додайте REACT_APP_MAPBOX_TOKEN до файлу .env.local.",
+      "get_token": "Отримайте безкоштовний токен на mapbox.com",
+      "map_error": "Помилка карти",
+      "reload_page": "Перезавантажити сторінку"
+    }
   }
 }

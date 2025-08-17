@@ -7,12 +7,13 @@
     "map": "Map",
     "shelters": "Shelters",
     "alerts": "Alerts",
-    "resources": "Resources"
+    "resources": "Resources",
+    "reports": "Reports"
   },
   "shelters": {
     "bomb_shelter": "Bomb Shelter",
     "metro": "Metro",
-    "basement": "Basement",
+    "basement": "Basement", 
     "parking": "Parking",
     "capacity": "Capacity",
     "accessibility": "Accessibility",
@@ -23,13 +24,37 @@
       "unknown": "Unknown"
     },
     "find_nearest": "Nearest Shelter",
-    "route_to": "Route to Shelter"
+    "route_to": "Route to Shelter",
+    "title": "Bomb Shelters",
+    "description": "Nearest bomb shelters and safe locations",
+    "nearest_shelters": "Nearest bomb shelters and safe locations",
+    "locations": {
+      "maidan_metro": "Maidan Nezalezhnosti Metro",
+      "school_7_basement": "School #7 Basement", 
+      "globus_parking": "Globus Mall Underground Parking"
+    }
   },
   "alerts": {
     "air_raid": "Air Raid Alert",
     "all_clear": "All Clear",
     "active": "Active Alert",
-    "history": "Alert History"
+    "history": "Alert History",
+    "title": "Safety Alerts",
+    "description": "Air raid alerts and safety notifications",
+    "active_alert": "ACTIVE ALERT",
+    "just_now": "Just now",
+    "minutes_ago": "min ago",
+    "hours_ago": "h ago",
+    "messages": {
+      "air_raid_kyiv": "Air raid alert for Kyiv region. Seek immediate shelter.",
+      "all_clear_lviv": "All clear signal for Lviv region.",
+      "air_raid_kharkiv_ended": "Air raid alert ended for Kharkiv region."
+    },
+    "regions": {
+      "kyiv": "Kyiv",
+      "lviv": "Lviv", 
+      "kharkiv": "Kharkiv"
+    }
   },
   "resources": {
     "hospital": "Hospital",
@@ -37,20 +62,60 @@
     "power": "Charging",
     "water": "Water",
     "humanitarian_aid": "Humanitarian Aid",
-    "24h": "24 hours"
+    "24h": "24 hours",
+    "title": "Essential Resources", 
+    "description": "Essential services and resources nearby",
+    "hours": "Hours",
+    "phone": "Phone",
+    "services": "Services",
+    "get_directions": "Get Directions",
+    "call": "Call",
+    "locations": {
+      "kyiv_hospital_5": "Kyiv City Hospital #5",
+      "apteka_24": "Apteka 24/7",
+      "metro_charging": "Charging Station - Metro",
+      "water_distribution": "Water Distribution Point",
+      "red_cross_center": "Red Cross Distribution Center"
+    }
   },
   "reports": {
     "quick_report": "Quick Report",
     "shelter_open": "Shelter Open",
     "resource_available": "Resource Available",
     "verify": "Verify",
-    "verified": "Verified"
+    "verified": "Verified",
+    "title": "Recent Reports",
+    "description": "Community-verified safety reports",
+    "view_on_map": "View on Map",
+    "report_issue": "Report Issue",
+    "confirmations": "confirmations",
+    "location_selected": "Location Selected",
+    "danger": "Danger",
+    "safe": "Safe",
+    "checkpoint": "Checkpoint",
+    "help_community": "Help your community stay safe by reporting current conditions",
+    "locations": {
+      "shevchenkivskyi": "Shevchenkivskyi District",
+      "podilskyi": "Podilskyi District",
+      "pechersk": "Pechersk District",
+      "obolon": "Obolon District"
+    },
+    "messages": {
+      "gunfire_maidan": "Heavy gunfire reported near Maidan Nezalezhnosti",
+      "area_cleared": "Area cleared by peacekeepers",
+      "checkpoint_active": "Military checkpoint active",
+      "shelter_safe": "Shelter confirmed safe"
+    }
   },
   "emergency": {
     "emergency_contacts": "Emergency Contacts",
     "first_aid": "First Aid",
     "battery_saver": "Battery Saver",
-    "offline_mode": "Offline Mode"
+    "offline_mode": "Offline Mode",
+    "emergency_services": "Emergency Services",
+    "police": "Police",
+    "fire_department": "Fire Department",
+    "medical_emergency": "Medical Emergency"
   },
   "common": {
     "loading": "Loading...",
@@ -59,6 +124,33 @@
     "cancel": "Cancel",
     "confirm": "Confirm",
     "close": "Close",
-    "details": "Details"
+    "details": "Details",
+    "distance": "Distance",
+    "status": "Status",
+    "active": "ACTIVE"
+  },
+  "map": {
+    "kyiv": "Kyiv",
+    "kyiv_map": "Kyiv Map",
+    "real_time_updates": "Real-time Updates",
+    "zoom_hint": "Pinch to zoom",
+    "legend": {
+      "danger": "Danger",
+      "safe": "Safe", 
+      "checkpoint": "Checkpoint",
+      "shelter": "Shelter"
+    },
+    "controls": {
+      "reset_bearing": "Reset bearing to north",
+      "zoom_in": "Zoom in",
+      "zoom_out": "Zoom out"
+    },
+    "errors": {
+      "not_available": "Map Not Available",
+      "token_missing": "Mapbox token is missing. Please add REACT_APP_MAPBOX_TOKEN to your .env.local file.",
+      "get_token": "Get a free token at mapbox.com",
+      "map_error": "Map Error",
+      "reload_page": "Reload Page"
+    }
   }
 }
