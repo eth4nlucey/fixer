@@ -1,19 +1,28 @@
-# ФІКСЕР / FIXER - Safety Map for Ukraine
+# FIXER - Emergency Safety Map (Portfolio Project)
 
-A mobile-first Progressive Web App (PWA) specifically designed for Ukrainian civilians, international journalists, and volunteers. Provides critical safety information including bomb shelters, air raid alerts, and essential resources, with trilingual support (Ukrainian, English, Russian).
+A location-based emergency reporting system demonstrating real-time mapping and geospatial databases.
 
-## 🚀 Features
+This is a technical demonstration project showcasing full-stack development skills. While inspired by humanitarian use cases, the current implementation focuses on technical architecture rather than production deployment.
 
-- **🏠 Bomb Shelter Locator** - Find nearest shelters with capacity and amenities
-- **🚨 Air Raid Alert System** - Real-time alerts with visual and audio warnings
-- **🌍 Trilingual Support** - Ukrainian (default), English, and Russian
-- **📱 Mobile-First Design** - Optimized for 375px-428px viewports
-- **⚡ Emergency Features** - Battery saver mode, large touch targets, high contrast
-- **📍 Quick Reporting** - One-tap shelter status and resource availability updates
-- **🔄 Offline-First** - Works without internet connection
-- **🎨 Ukrainian Design** - Ukrainian blue/yellow color scheme with cultural sensitivity
+## Technical Features Demonstrated
 
-## 🛠 Tech Stack
+### Implemented & Working
+- **Real-time Map Interface** - Interactive Mapbox GL JS with live marker updates
+- **Geospatial Database** - PostGIS spatial queries with distance calculations
+- **Anonymous Reporting System** - Privacy-focused data submission without authentication  
+- **Multilingual Support** - Dynamic UI translation (Ukrainian/English/Russian)
+- **PWA Architecture** - Service worker, offline caching, installable app
+- **Mobile-Optimized UI** - Touch-first design with accessible interactions
+- **Real-time Data Sync** - WebSocket updates via Supabase Realtime
+
+### Learning Outcomes
+- **Frontend**: React 18 + TypeScript + Modern CSS patterns
+- **Backend**: PostgreSQL + PostGIS geospatial extensions  
+- **State Management**: Zustand for lightweight, performant state
+- **Testing**: Jest + React Testing Library with 80%+ coverage
+- **DevOps**: Vercel deployment with environment configuration
+
+## Tech Stack
 
 - **Frontend**: React, TypeScript, Mapbox GL JS, Tailwind CSS, PWA
 - **Internationalization**: i18next with browser language detection
@@ -22,7 +31,7 @@ A mobile-first Progressive Web App (PWA) specifically designed for Ukrainian civ
 - **Hosting**: Vercel
 - **Mobile-first**: 375px-428px viewport (iPhone SE to iPhone Pro Max)
 
-## 📱 Setup Instructions
+## Setup Instructions
 
 ### 1. Install Dependencies
 
@@ -32,7 +41,7 @@ npm install
 
 ### 2. Environment Variables
 
-The Supabase backend is already configured. You only need to add your Mapbox token:
+Supabase backend is pre-configured. Add your Mapbox token:
 
 ```env
 REACT_APP_SUPABASE_URL=https://hhdhjrkojgqziqmygqct.supabase.co
@@ -42,14 +51,14 @@ REACT_APP_MAPBOX_TOKEN=your_mapbox_public_token
 
 ### 3. Key Features Implementation
 
-The app includes these Ukrainian-specific features:
+Ukrainian-specific features:
 
-- **🇺🇦 Language Detection**: Auto-detects Ukrainian, falls back to English/Russian
-- **🎨 Ukrainian Colors**: #0057B7 (blue) and #FFD700 (yellow) design theme
-- **📱 Emergency UX**: 44px minimum touch targets, battery saver mode
-- **🏠 Shelter Priority**: Bomb shelters are the #1 priority feature
-- **🚨 Alert System**: Air raid alerts with visual/audio notifications
-- **📍 Quick Actions**: One-tap reporting for shelter status and resources
+- **Language Detection**: Auto-detects Ukrainian, falls back to English/Russian
+- **Ukrainian Colors**: #0057B7 (blue) and #FFD700 (yellow) design theme
+- **Emergency UX**: 44px minimum touch targets, battery saver mode
+- **Shelter Priority**: Bomb shelters are the #1 priority feature
+- **Alert System**: Air raid alerts with visual/audio notifications
+- **Quick Actions**: One-tap reporting for shelter status and resources
 
 ### 4. Mapbox Setup
 
@@ -71,7 +80,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 npm run build
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Vercel Deployment
 
@@ -84,7 +93,7 @@ npm run build
    - `REACT_APP_MAPBOX_TOKEN`
 5. Deploy
 
-## 📱 Testing the App
+## Testing the App
 
 1. Open on mobile device or Chrome DevTools mobile view
 2. Allow location permissions
@@ -93,9 +102,9 @@ npm run build
 5. Test offline mode (Chrome DevTools > Network > Offline)
 6. Install as PWA (Chrome menu > Install app)
 
-## 🔮 Next Features to Build
+## Next Features to Build
 
-After MVP is working, add:
+Planned features include:
 
 1. Report verification system
 2. Find nearest hospital/shelter
@@ -108,7 +117,7 @@ After MVP is working, add:
 9. Multi-language support
 10. Share location via WhatsApp
 
-## 🐛 Common Issues & Solutions
+## Common Issues & Solutions
 
 ### Issue: Location not working
 **Solution**: Ensure HTTPS in production, check browser permissions
@@ -122,7 +131,7 @@ After MVP is working, add:
 ### Issue: PWA not installing
 **Solution**: Must be served over HTTPS, check manifest.json
 
-## 🔒 Security Features
+## Security Features
 
 - Anonymous reporting by default
 - Device ID for verification without accounts
@@ -131,7 +140,7 @@ After MVP is working, add:
 - Row Level Security on all tables
 - Rate limiting on API calls
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 src/
@@ -157,15 +166,15 @@ src/
 └── App.tsx
 ```
 
-## 🤝 Contributing
+## Contributing
 
-This app helps save lives by crowd-sourcing safety information in conflict zones. Build with care and consideration for the users who will depend on it.
+This application crowdsources safety information in conflict zones. Development should prioritize user safety and reliability.
 
 - MIT License
-- Accept PRs for translations
-- Partner with humanitarian organizations
-- Maintain free tier for conflict zones
+- PRs welcome for translations
+- Open to partnerships with humanitarian organizations
+- Free access maintained for conflict zones
 
 ---
 
-**⚠️ Important**: This application is designed for humanitarian purposes to help save lives in conflict zones. Please use responsibly and consider the safety of all users.
+**Important**: This application is designed for humanitarian purposes. Please use responsibly and consider the safety of all users.
